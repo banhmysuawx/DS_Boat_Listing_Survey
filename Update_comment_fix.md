@@ -1,0 +1,6 @@
+Mình có xem qua project của bạn về cơ bản bạn xử lý khá tốt nhưng mình có một vài nhận xét:
+- Đây là bài toán dự báo về lượt view ( bản chất là bài toán hồi quy regression) nhưng bạn đã xử lý và sử dụng các khoảng bins phân chia cho biến mục tiêu "View" để biến bài toán này thành bài toán phân loại đa biến và đây là cách tiếp cận chưa thật sự hiệu quả lắm (Điều này thể hiện rõ ở hiệu suất của mô hình chỉ đạt 57% lớn hơn dự báo ngẫu nhiên 7%)
+- Nếu xây dựng theo bài toán hồi quy bạn nên lựa chọn các metrics đánh giá khác như MSE, RMSE, MAPE
+- Bộ dữ liệu này có 9888 quan sát (khá bé) nhưng khi xử lý missing values bạn đã dropna tận 1411 quan sát (chiếm 14.27%) của toàn bộ dữ liệu, điều này dẫn đến việc mất mát thông tin khá nhiều. Xử lý missing values là việc quan trọng trong khâu tiền xử lý dữ liệu nên bạn có thể tìm hiểu thêm các kỹ thuật fillna khác như mean, median, mode, KNN, SimpleImputer bạn nha
+- Khi chưa biết cột nào quan trọng ( chưa dùng feature selection) mình nghĩ nên sử dụng tất cả các features để huấn luyện mô hình từ đấy có một baseline rồi dựa vào baseline để tối ưu mô hình thêm.
+=> Mình chỉ có những nhận xét thêm như thế thôi còn về phần xử lý dữ liệu bạn làm khá tốt rồi, chúc bạn học tốt nhé!
